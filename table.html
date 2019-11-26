@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        table {
+            /*
+                border-collapse : table을 표시할 때 여백 없애기
+                border-spacing : 셀과 셀 사이의 여백 없애기
+                표를 실선모양으로 외부 라인 설정
+            */
+            /*
+            border-collapse: collapse;
+            border-spacing: 0px;
+            */
+            width: 100%;
+            /*
+            border: 1px solid blue;
+            */
+        }
+
+        table tr {
+            border: 1px dashed red;
+        }
+        /*
+            table row에 마우스가 위치하면 바탕색을 gray로 설정하고 마우스 커서를 손가락 모양으로
+        */
+        table tr:hover {
+            background-color: gray;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>번호</td>
+            <td>이름</td>
+            <td>학과</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>홍길동</td>
+            <td>정보통신과</td>
+            <td rowspan="5">5</td>
+        </tr>
+        <tr>
+            <td>002</td>
+            <td>성춘향</td>
+            <td>법학과</td>
+        </tr>
+        <tr>
+            <td>003</td>
+            <td>이몽룡</td>
+            <td>정치외교학과</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>004</td>
+        </tr>
+        <tr>
+            <td colspan="2">colspan=2</td>
+        </tr>
+        <tr>
+            <td colspan="3">colspan=3</td>
+        </tr>
+        <tr>
+            <td colspan="4">colspan=4</td>
+        </tr>
+        <tr>
+            <td colspan="5">colspan=5</td>
+        </tr>
+        <tr>
+            <td colspan="6">colspan=6</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <table border="1">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
