@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		$("#u_id").keypress(function(e) {
+			if(e.keyCode == 13) {
+				
+				// 현재 열려있는 화면의 Top 좌표 + 높이/2 - 윈도우 전체 사이즈의 높이/2 
+				let top = window.screen.height + (window.screen.availHeight / 2) - (window.screen.height / 2)
+				
+				let left = window.screen.width + (window.screen.availWidth / 2) - (window.screen.width / 2)
+				
+				let u_id = $(this).val()
+				let status = "toobar=no, scrollbars=yes, resizable=no, top=500, left=500, width=700, height=400"
+				
+				let openWindow = window.open("${rootPath}/user/idcheck?u_id" + u_id, "_new", status)
+				openWindow.moveTo(left, top)
+			}
+		})
+    })
+</script>
+</head>
+<body>
+    
+</body>
+</html>
