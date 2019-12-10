@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var tbl = $("#check-table")
+
+            // 제목 tr 부분에 있는 checkbox를 클릭할 경우 이벤트 발생
+            $(":checkbox:first", tbl).click(function(){
+
+                // 체크되어 있다면
+                if($(this).is(":checked")) {
+                    // tbl에 들어있는 모든 checkbox를 체크하기
+                    $(":checkbox", tbl).attr("checked", true)
+                } else {
+                    // 체크되어있지 않으면 체크를 해제하기
+                    $(":checkbox", tbl).attr("checked", false)
+                }
+                // 전체 체크박스에 change 이벤트를 발생시켜라
+                $(":checked",tbl).trigger("change")
+            })
+
+            
+
+            // 클릭된 체크박스가 첫번째가 아니면(not)
+            $(":checkbox:not(:first)",tbl).click(function(){
+                // 첫번째를 제외한 박스 개수
+                let allCount = $(":checkbox:not(:first)", tbl).length
+                // 체크표시가 있는 박스 개수
+                let checkedCount = $(":checkbox:not(:first)",tbl).filter(":checked").length
+
+                if(allCount == checkedCount) {
+                    $(":checkbox:first",tbl).attr("checked","checked")
+                } else {
+                    $(":checkbox:first",tbl).removeAttr("checked")
+                }
+                
+            }).change(function() {
+                if($(this).is(":checked")) {
+                    $(this).parent().parent().addClass("selected")
+                } else {
+                    $(this).parent().parent().removeClass("selected")
+                }
+            })
+        })
+    </script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table td, table th {
+            padding: 20px;
+        }
+
+        table th {
+            background-color: #ccc;
+        }
+
+        table tr.selected {
+            background-color: navy;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" id="check-table">
+        <caption>주소록</caption>
+        <colgroup>
+            <col width="50px" />
+            <col width="200px" />
+            <col width="500px" />
+        </colgroup>
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>이름</th>
+            <th>전화번호</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>홍길동</td>
+            <td>111</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>이몽룡</td>
+            <td>222</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>성춘향</td>
+            <td>333</td>
+        </tr>
+    </table>
+</body>
+</html>
