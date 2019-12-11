@@ -5,14 +5,48 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>국가지원금 안내</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+
+        })
+    </script>
+    <style>
+        * {
+            border: 1px solid black;
+        }
+
+        header {
+            line-height: 3px;
+        }
+
+        select {
+            
+        }
+        body {
+            width: 978px;
+            margin: auto;
+        }
+
+        #search {
+            margin: 16px auto;
+        }
+
+        #btn-search {
+            margin: auto;
+        }
+
+
+    </style>
 </head>
 <body>
     
-    <p>입력한 정보를 기준으로 받을 수 있는 지원금을 계산합니다</p>
-    <p>입력한 정보는 어디에도 저장되지 않고 계산을 위한 조건값으로만 사용되며</p>
-    <p>조건값이 많을수록 검색 결과의 정확도가 올라갑니다</p>
+    <header>
+        <p>입력한 정보를 기준으로 받을 수 있는 지원금을 계산합니다</p>
+        <p>입력한 정보는 어디에도 저장되지 않고 계산을 위한 조건값으로만 사용되며</p>
+        <p>조건값이 많을수록 검색 결과의 정확도가 올라갑니다</p>
+    </header>
 
     <form>
         <h3>- 필수입력정보 -</h3>
@@ -69,7 +103,7 @@
             <label for="house2">미보유</label>
         </div>
 
-        <p>4-1. (주택보유 선택시) 주거유형을 선택하세요.(중복선택가능)</p>
+        <p>4-1. (주택 보유 선택시) 주거유형을 선택하세요. (중복선택가능)</p>
         <div class="house_a">
             <input type="hidden" name="house_a" value="dummy">
             <input type="checkbox" name="house_a" id="house_a_1" value="house_a_1">
@@ -90,7 +124,7 @@
 
         <h3>- 선택입력정보 -</h3>
         <p>아래 정보는 입력하지 않아도 검색이 가능하지만 결과의 정확도가 낮아질 수 있습니다</p>
-        <p>4. 재학중이신가요?</p>
+        <p>5. 재학중이신가요?</p>
         <div class="hak">
             <input type="radio" name="hak" value="어린이집" id="hak1">
             <label for="hak1">어린이집</label>
@@ -112,7 +146,7 @@
             <label for="hak9">기타</label>
         </div>
 
-        <p>5. 사업자,근로자,취업준비생/창업예정자/구직자 중 해당하는 부분이 있으신가요? (중복선택가능)</p>
+        <p>6. 사업자,근로자,취업준비생/창업예정자/구직자 중 해당하는 부분이 있으신가요? (중복선택가능)</p>
         <div class="job1">
             <input type="hidden" name="job1" value="dummy">
             <input type="checkbox" name="job1" id="job1_1" value="사업자">
@@ -123,7 +157,7 @@
             <label for="job1_3">취업준비생/창업예정자/구직자</label>
         </div>
 
-        <p>5-1. (사업자 선택시) 지원형태를 선택하세요.(중복선택가능)</p>
+        <p>6-1. (사업자 선택시) 지원형태를 선택하세요. (중복선택가능)</p>
         <div class="job1_a">
             <input type="hidden" name="job1_a" value="dummy">
             <input type="checkbox" name="job1_a" id="job1_a_1" value="고용지원">
@@ -136,7 +170,7 @@
             <label for="job1_a_4">환경지원(시설, 장비, 설비 설치 및 설치비 지원, 안전지원)</label>
         </div>
 
-        <p>6. (정년)퇴직자,중장기복무제대군인 중 해당하는 부분이 있으신가요? (중복선택가능)</p>
+        <p>7. (정년)퇴직자,중장기복무제대군인 중 해당하는 부분이 있으신가요? (중복선택가능)</p>
         <div class="job2">
             <input type="hidden" name="job2" value="dummy">
             <input type="checkbox" name="job2" id="job2_1" value="퇴직자">
@@ -145,7 +179,7 @@
             <label for="job2_2">중장기복무제대군인</label>
         </div>
 
-        <p>7. 장애유무를 선택하세요</p>
+        <p>8. 장애유무를 선택하세요</p>
         <div class="disorder">
             <input type="radio" name="disorder" value="어린이집" id="disorder1">
             <label for="disorder1">있음</label>
@@ -153,7 +187,7 @@
             <label for="disorder2">없음</label>
         </div>
 
-        <p>7-1. (장애유무 선택시) 장애유형을 선택하세요.(중복선택가능)</p>
+        <p>8-1. (장애유무 선택시) 장애유형을 선택하세요. (중복선택가능)</p>
         <div class="disorder_a">
             <input type="hidden" name="disorder_a" value="dummy">
             <input type="checkbox" name="disorder_a" id="disorder_a_1" value="지체장애">
@@ -188,7 +222,7 @@
             <label for="disorder_a_15">정신장애</label>
         </div>
 
-        <p>7-2. (장애유무 선택시) 장애유형을 선택하세요.(중복선택가능)</p>
+        <p>8-2. (장애유무 선택시) 장애유형을 선택하세요. (중복선택가능)</p>
         <div class="disorder_b">
             <input type="hidden" name="disorder_b" value="dummy">
             <input type="checkbox" name="disorder_b" id="disorder_b_1" value="disorder_b_1">
@@ -201,7 +235,7 @@
             <label for="disorder_b_4">장애정도가 심하지 않은 장애인</label>
         </div>
 
-        <p>8. 질병유무를 선택하세요.(중복선택가능)</p>
+        <p>9. 질병유무를 선택하세요. (중복선택가능)</p>
         <div class="disease">
             <input type="hidden" name="disease" value="dummy">
             <input type="checkbox" name="disease" id="disease1" value="disease1">
@@ -210,7 +244,7 @@
             <label for="disease2">중증질환 외 질병(만성질환자, 당뇨, 고혈압, 결핵, 선천성대사이상, 치매(파킨슨) 등)</label>
         </div>
 
-        <p>건강상태를 선택하세요.(중복선택가능)</p>
+        <p>10. 건강상태를 선택하세요. (중복선택가능)</p>
         <div class="health">
             <input type="hidden" name="health" value="dummy">
             <input type="checkbox" name="health" id="health1" value="health1">
@@ -219,7 +253,7 @@
             <label for="health2">(장기)요양환자(장기요양, 요양성환자)</label>
         </div>
 
-        <p>보훈대상을 선택하세요.(중복선택가능)</p>
+        <p>11. 보훈대상을 선택하세요. (중복선택가능)</p>
         <div class="bohun">
             <input type="hidden" name="bohun" value="dummy">
             <input type="checkbox" name="bohun" id="bohun1" value="bohun1">
@@ -238,7 +272,7 @@
             <label for="bohun7">특수임무 유공자(특수임무사망자·행방불명자, 특수임무부상자, 특수임무공로자)</label><br/>
         </div>
 
-        <p>위기상황을 선택하세요.(중복선택가능)</p>
+        <p>12. 위기상황을 선택하세요. (중복선택가능)</p>
         <div class="danger">
             <input type="hidden" name="danger" value="dummy">
             <input type="checkbox" name="danger" id="danger1" value="danger1">
@@ -257,7 +291,7 @@
             <label for="danger7">기타</label>
         </div>
 
-        <p>위기상황을 선택하세요.(중복선택가능)</p>
+        <p>13. 위기상황을 선택하세요. (중복선택가능)</p>
         <div class="damage">
             <input type="hidden" name="damage" value="dummy">
             <input type="checkbox" name="damage" id="damage1" value="damage1">
@@ -270,7 +304,7 @@
             <label for="damage4">기타</label>
         </div>
 
-        <p>그 외 상황을 선택하세요.(중복선택가능)</p>
+        <p>14. 그 외 상황을 선택하세요. (중복선택가능)</p>
         <div class="etc">
             <input type="hidden" name="etc" value="dummy">
             <input type="checkbox" name="etc" id="etc1" value="etc1">
@@ -281,8 +315,10 @@
             <label for="etc3">가정위탁</label>
         </div>
 
-        <p>건강보험료를 입력해주세요</p>
-        <p>본인이 어디에 해당하는지 모르는 경우</p>
+        <p>15. 건강보험료를 입력해주세요</p>
+        국민건강보험공단 건강보험료 조회 링크 (클릭시 새 창에서 열림) :
+        <br/><a href="https://minwon.nhis.or.kr/menu/retriveMenuSet.xx?menuId=MENU_WBMCA09" target="_new">https://minwon.nhis.or.kr/menu/retriveMenuSet.xx?menuId=MENU_WBMCA09</a>
+    
         <p></p>
         <div class="nhis">
             <select name="nhis1" class="region">
@@ -294,11 +330,45 @@
                 <option value="피부양자지역">피부양자(지역)</option>
             </select>
 
-            <input name="nhis2">
+            <input name="nhis2"> 원
         </div>
 
-        
+        <p>16. 근로/사업소득(월평균)</p>
+        <div class="pay1">
+            본인 <input name="pay1" id="pay1"> 원
+        </div>
 
+        <p>17. 그 외 소득(월평균)</p>
+        <div class="pay2">
+            본인 <input name="pay2" id="pay2"> 원
+        </div>
+
+        <p>18. 주거용 재산</p>
+        <p>- 거주를 목적으로 하는 주택, 부속토지 등의 금액</p>
+        <div class="property1">
+            본인 <input name="property1" id="property1"> 원
+        </div>
+
+        <p>19. 주거 외 재산</p>
+        <p>- 주거용 목적 이외의 주택, 건물, 시설물, 토지, 임차보증금의 금액</p>
+        <div class="property2">
+            본인 <input name="property2" id="property2"> 원
+        </div>
+
+        <p>20. 금융재산</p>
+        <p>- 현금, 수표, 어음, 주식, 국공채 등 유가증권, 예금, 적금, 부금, 보험, 수익증권 등의 총 금액</p>
+        <div class="property3">
+            본인 <input name="property3" id="property3"> 원
+        </div>
+
+        <p>21. 부채금액</p>
+        <p>- 금융기관 대출금, 공증된 사채 등으로 차용한 금액 중 미상환액</p>
+        <div class="debt">
+            본인 <input name="debt" id="debt"> 원
+        </div>
+        <div id="search">
+            <button id="btn-search">검색</button>
+        </div>
     </form>
 </body>
 </html>
