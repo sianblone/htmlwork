@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+    <script>
+        // 전통적인 방식의 JS 코딩
+        function func_a(text) {
+            alert("나는 func a 입니다. " + text)
+        }
+
+        // 함수를 변수 선언하는 것처럼 만드는 방법
+        // 함수를 변수로 선언 = 객체를 변수로 선언하는 것과 같은 원리
+        // 함수를 변수로 선언할 수 있는 몇 가지 언어들이 있다
+        // js는 함수를 변수로 선언하는 대표적인 문법을 가진 언어
+        // js의 함수를 1급 함수라고 한다
+        var func_b = function(text) {
+            alert("나는 func b 입니다")
+        }
+
+        // 화살표 함수
+        // JS 2015 버전부터 사용 가능
+        var func_c = () => {
+            alert("나는 func c 입니다")
+        }
+
+        var func_d = (text) => {
+            alert("나는 func d 입니다")
+        }
+
+        function funcTest() {
+            func_a("우리나라")
+            func_b("Korea")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
